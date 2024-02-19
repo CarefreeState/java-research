@@ -1,0 +1,36 @@
+server:
+  port: 18888
+spring:
+  mail:
+    host: smtp.yeah.net
+    port: 465
+    username: mamingsheng103@yeah.net
+    password: ORMALZWEWNUTXTCV
+    default-encoding: utf-8
+    properties:
+      mail:
+#        debug: true
+        smtp:
+          socketFactory:
+            class: javax.net.ssl.SSLSocketFactory
+  output:
+    ansi:
+      enabled: ALWAYS # 配置控制台输出的效果，彩色、
+knife4j:
+  enable: true
+  openapi:
+    title: 邮箱发送接口文档
+    description: "邮箱发送接口文档"
+    email: mamingsheng103@yeah.net
+    concat: 马大帅
+    url: https://www.baidu.com
+    version: v1.0.0
+    group:
+      default:
+        group-name: default
+        api-rule: package
+        api-rule-resources:
+          - com.macaku.controller
+res:
+  path: D:/
+  map: email-attachment/

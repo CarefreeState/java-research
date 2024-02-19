@@ -1,0 +1,23 @@
+<font style="font-size: 10pt; color: brown">
+  尊敬的<span th:text="${recipientName}"></span>
+  ，感谢您关注AchoBeta实验室，您的招新面试通知如下：
+</font>
+<table border="1">
+  <tr>
+    <td bgcolor="#636EE8">面试者</td>
+    <td th:text="${recipientName}"></td>
+  </tr>
+  <tr>
+    <td>通知者</td>
+    <td th:text="${senderName}"></td>
+  </tr>
+  <tr>
+    <td>通知时间</td>
+    <td th:text="${createTime}"></td>
+  </tr>
+</table>
+<p th:text="${content}"></p>
+
+<img
+  src="https://www.baidu.com/img/PCtm_d9c8750bed0b3c7d089fa7d55720d6cf.png"
+/>
