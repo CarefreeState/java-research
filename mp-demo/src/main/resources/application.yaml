@@ -1,0 +1,53 @@
+spring:
+  output:
+    ansi:
+      enabled: ALWAYS # 配置控制台输出的效果，彩色
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/mp?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&serverTimezone=Asia/Shanghai&rewriteBatchedStatements=true
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: mmsszsd666
+server:
+  port: 12345
+logging:
+  level:
+    com.itheima: debug
+  pattern:
+    dateformat: HH:mm:ss
+#mybatis:
+#  mapper-locations: classpath*:mapper/*.xml
+mybatis-plus:
+  type-aliases-package: com.itheima.mp.domain.po #别名扫描包
+  mapper-locations: classpath*:/mapper/**/*.xml # Mapper.xml文件地址,默认值
+  configuration:
+    default-enum-type-handler: com.baomidou.mybatisplus.core.handlers.MybatisEnumTypeHandler #设置枚举处理器
+    map-underscore-to-camel-case: true # 是否开启下划线和驼峰的映射
+    cache-enabled: false # 是否开启二级缓存
+  global-config:
+    db-config:
+      logic-delete-field: deleted
+      #全局逻辑删除的实体字段名,字没类型可以是boolean、integer，每张表只要有这个字段名就会被认为是逻辑删除
+      #其实很合理，因为一般情况下逻辑删除的字段是一样的，这样也符合规范和约定！这样也很方便的把所有的表都设置为逻辑删除！
+      #这个逻辑删除的字段不应该成为别人的其他字段，这并不合适，也不符合规范
+      #逻辑删除不能被新增被删除的那一行一模一样的
+      logic-delete-value: 1 #逻辑已删除值(默认为1)
+      logic-not-delete-value: 0 #逻辑未删除值(默认为0)
+      id-type: ASSIGN_ID #id为雪花算法生成 设置为none->为遵循版本默认，可见这个版本默认为assign_id
+      # 如果局部没有设置默认为none，或者说就是设置为none，都取得是全局的
+      update-strategy: not_null #更新策略:只更新非空字段
+      # https://www.baomidou.com/pages/56bac0/#typealiasespackage，官方文档
+knife4j:
+  enable: true
+  openapi:
+    title: 用户管理接口文档
+    description: "用户管理接口文档"
+    email: zhanghuyi@itcast.cn
+    concat: 虎哥
+    url: https://www.itcast.cn
+    version: v1.0.0
+    group:
+      default:
+        group-name: default
+        api-rule: package
+        api-rule-resources:
+          - com.itheima.mp.controller
