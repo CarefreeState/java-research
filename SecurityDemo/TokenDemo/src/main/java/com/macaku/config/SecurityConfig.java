@@ -75,7 +75,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
             .and()
             .authorizeRequests()
-            .antMatchers("/user/login") /*匿名访问(未认证才能访问，认证通过访问视为无权限)*/.anonymous()
+                .antMatchers("/user/login") /*匿名访问*/.anonymous()
 //            .antMatchers("/test/hi").hasAuthority("haha")//【配置控制权限，和注解配置权限，是“并”的关系】
 //            .antMatchers("/test/hi").hasAnyAuthority("haha")
 //            .antMatchers("/test/hi").hasRole("haha")
@@ -84,7 +84,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             .anyRequest()/*除上面外的所有请求全部需要认证(认证才能访问)*/.authenticated();
         // 添加过滤器
         http.addFilterAfter(jwtAuthenticationTokenFilter, UsernamePasswordAuthenticationFilter.class)
-                .addFilterAfter(authSuccessFilter, JwtAuthenticationTokenFilter.class);//添加过滤器在某个过滤器之前
+                .addFilterAfter(authSuccessFilter, JwtAuthenticationTokenFilter.class);
         // 配置异常处理器（默认的话貌似是抛对应的异常，一大串的东西、或者控制台无表示，用对应的响应状态码表示异常）
         http.exceptionHandling()
                 .authenticationEntryPoint(authenticationEntryPoint)

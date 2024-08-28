@@ -3,6 +3,7 @@ package com.macaku.controller;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -29,10 +30,10 @@ public class HelloController {
 
     @GetMapping("/hi")
 //    @PreAuthorize("hasAuthority('system:dept:list')")
-    @PreAuthorize("hasAuthority('system:dept:balabala')")
+//    @PreAuthorize("hasAuthority('system:dept:balabala')")
 //    @PreAuthorize("hasRole('system:dept:list')")//拼接ROLE_前缀 后去验证
     public String hi() {
-        return "<h1>hi!</h1>";
+        return SecurityContextHolder.getContext().getAuthentication().toString();
     }
 
     @GetMapping("/haha")
