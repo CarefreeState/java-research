@@ -54,11 +54,17 @@
 
 <script>
     jQuery("#username").focus();
+    jQuery.toast({
+        heading: "提醒",
+        text: "还没有用户名和密码，先进行注册！",
+        icon: "info",
+        allowToastClose: true,
+    });
     function login() {
         jsonRequest("/api/v1/user/login", "POST", {
             username: jQuery("#username").val(),
             password: jQuery("#password").val(),
-        }, function (data) {
+        }, function () {
             jQuery.toast({
                 heading: "成功",
                 text: "登录成功",

@@ -26,7 +26,7 @@ import java.util.Objects;
 @WebServlet("/api/v1/user/login")
 public class LoginServlet extends HttpServlet {
 
-    private final UserDao userDao = new UserDaoLocalImpl();
+    private final UserDao userDao = new UserDaoDBImpl();
 
     private final ObjectMapper objectMapper = new ObjectMapper();
 
