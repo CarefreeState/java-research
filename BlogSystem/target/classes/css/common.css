@@ -1,0 +1,227 @@
+/* 公共样式 */
+
+* {
+  box-sizing: border-box;
+  /* 去除一些浏览器的默认样式，而个别的标签有特殊要求
+    只需要层叠这个效果就行了 */
+  padding: 0;
+  margin: 0;
+
+  user-select: none;
+}
+html {
+  height: 100%;
+}
+body {
+  background-image: url(../img/bgi.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  /*尽可能填满body,在不改变比例的情况下是contain，这个是一定会填满*/
+  background-size: cover;
+  /*body得设置高度才能正确显示，这是规定，没有为什么*/
+  /* 我也不知道为什么刚才就显示的出来，可能是原本不对背景进行大小要求，位置要求
+        默认以图片原大小为准  -
+    要求背景大小和位置则需要body的高度作为参考，才能得到正确判断！！！ */
+  height: 100%;
+  /* 100%当前元素跟父元素一样高 */
+}
+.navigation {
+  height: 50px;
+  background-color: rgba(50, 50, 50, 0.95);
+  display: flex;
+  align-items: center;
+}
+.navigation img {
+  width: 40px;
+  height: 40px;
+  margin-left: 30px;
+  margin-right: 10px;
+}
+
+.navigation a {
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 900;
+  font-family: "微软雅黑";
+  text-decoration: none;
+  padding: 0px 10px;
+  /* 按偏了也能选中，扩大点击范围， 更加号的体验*/
+}
+
+.navigation .space1 {
+  width: 50%;
+}
+
+#title {
+  line-height: 40px;
+  height: 40px;
+  font-weight: 300;
+  font-family: "Courier New", Courier, monospace;
+  color: white;
+  text-decoration: none;
+}
+
+.navigation .space2 {
+  width: 50%;
+}
+
+.container {
+  /* 固定宽度 */
+  width: 1000px;
+  margin: 0 auto;
+  height: calc(100% - 50px);
+
+  display: flex;
+  justify-content: space-between;
+}
+
+/* 增加可读性 */
+.container .container-left {
+  height: 100%;
+  width: 20%;
+}
+
+.container .container-right {
+  height: 100%;
+  width: 79%;
+}
+
+.card {
+  margin-top: 10px;
+  height: 250px;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 30px;
+}
+
+.card img {
+  margin: 20px 40px;
+  /* 上下20 左右40 */
+  width: 120px;
+  height: 120px;
+  border-radius: 60px;
+}
+.card h3 {
+  text-align: center;
+}
+.card a {
+  display: block;
+  background-color: rgba(255, 200, 50, 0.6);
+  color: black;
+  text-decoration: none;
+  text-align: center;
+  width: 120px;
+  height: 40px;
+  font-weight: 900;
+  border: black 2px solid;
+  line-height: 40px;
+  /*当行高对于height的时候，恰好文本水平居中*/
+  margin: 20px auto;
+  transition: all 0.618s;
+  /* 对所有的变化都缓慢持续2s
+    1. 悬停于按钮
+    2. 离开按钮 */
+  cursor: pointer;
+}
+.card #updateClass {
+  display: block;
+  background-color: rgba(32, 106, 193, 0.6);
+  color: black;
+  text-decoration: none;
+  text-align: center;
+  width: 120px;
+  height: 40px;
+  font-weight: 900;
+  border: black 2px solid;
+  line-height: 40px;
+  /*当行高对于height的时候，恰好文本水平居中*/
+  margin: 20px auto;
+  transition: all 0.618s;
+  /* 对所有的变化都缓慢持续2s
+    1. 悬停于按钮
+    2. 离开按钮 */
+  cursor: pointer;
+}
+
+
+#normal {
+  display: block;
+  background-color: rgba(255, 200, 50, 0.6);
+  color: black;
+  text-decoration: none;
+  text-align: center;
+  width: 120px;
+  height: 40px;
+  font-weight: 900;
+  border: black 2px solid;
+  line-height: 40px;
+  /*当行高对于height的时候，恰好文本水平居中*/
+  margin: 20px auto;
+  transition: all 0.618s;
+  /* 对所有的变化都缓慢持续2s
+    1. 悬停于按钮
+    2. 离开按钮 */
+  cursor: pointer;
+}
+
+.card .del {
+  display: block;
+  background-color: rgba(255, 0, 0, 0.6);
+  color: black;
+  text-decoration: none;
+  text-align: center;
+  width: 120px;
+  height: 40px;
+  font-weight: 900;
+  border: black 2px solid;
+  line-height: 40px;
+  /*当行高对于height的时候，恰好文本水平居中*/
+  margin: 20px auto;
+  transition: all 0.618s;
+  cursor: pointer;
+}
+
+.card a:hover {
+  /*选中后的改变的属性*/
+  background-color: rgb(147, 210, 253);
+  color: rgb(76, 66, 136);
+  cursor: pointer;
+}
+.card .del:hover {
+  /*选中后的改变的属性*/
+  background-color: rgb(147, 210, 253);
+  color: rgb(76, 66, 136);
+  cursor: pointer;
+}
+#normal:hover {
+  /*选中后的改变的属性*/
+  background-color: rgb(147, 210, 253);
+  color: rgb(76, 66, 136);
+  cursor: pointer;
+}
+.card #updateClass:hover {
+  /*选中后的改变的属性*/
+  background-color: rgb(147, 210, 253);
+  color: rgb(76, 66, 136);
+  cursor: pointer;
+}
+
+.card .counter {
+  display: flex;
+  padding: 5px;
+  justify-content: space-around;
+}
+.card .counter .h {
+  font-weight: 900;
+}
+
+.article {
+  margin-top: 10px;
+  height: calc(100% - 10px);
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.95);
+
+  border-radius: 10px;
+  padding: 20px;
+  overflow: auto;
+  /* 内容溢出，滚动条放入这里 */
+}

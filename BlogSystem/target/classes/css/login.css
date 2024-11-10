@@ -1,0 +1,164 @@
+.login-Container {
+  width: 100%;
+  height: calc(100% - 50px);
+  /*为了dialog能垂直水平居中*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.dialog {
+  width: 650px;
+  height: 275px;
+
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+}
+
+.dialog h3 {
+  font-size: 24px;
+  font-weight: 900;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+.dialog .row {
+  height: 50px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.dialog .r {
+  height: 50px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 20px 0;
+}
+.row label {
+  font-size: 15px;
+  width: 85px;
+  font-weight: 900;
+}
+#fileImage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-around;
+}
+#conf {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#co {
+  width: 100px;
+  height: 50px;
+  color: rgba(255, 255, 255, 0.618);
+  font-weight: 900;
+  background-color: rgb(251, 114, 153);
+  line-height: 50px;
+  text-align: center;
+  border-radius: 30px;
+  border: none;
+  transition: all 0.618s;
+}
+#co:hover {
+  background-color: rgb(101, 94, 252);
+  color: rgba(0, 0, 0, 0.618);
+}
+
+#i {
+  width: 200px;
+  height: 200px;
+  border-radius: 100px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  border: rgba(251, 114, 153, 0.5) 2px solid;
+}
+/* input不能直接用标签选择器直接修改，优先级不够 */
+#username {
+  width: 500px;
+  height: 45px;
+  font-size: 23px;
+  text-indent: 5px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.7);
+  border: rgba(251, 114, 153, 0.5) 2px solid;
+}
+#nickname {
+  width: 500px;
+  height: 45px;
+  font-size: 23px;
+  text-indent: 5px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.7);
+  border: rgba(251, 114, 153, 0.5) 2px solid;
+}
+#userType {
+  width: 500px;
+  height: 45px;
+  font-size: 23px;
+  text-indent: 5px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.7);
+  border: rgba(251, 114, 153, 0.5) 2px solid;
+}
+#password {
+  width: 500px;
+  height: 45px;
+  font-size: 23px;
+  text-indent: 5px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.7);
+  border: rgba(251, 114, 153, 0.5) 2px solid;
+}
+.r #submit {
+  width: 270px;
+  height: 40px;
+  color: rgba(255, 255, 255, 0.618);
+  font-weight: 900;
+  background-color: rgb(251, 114, 153);
+  line-height: 40px;
+  text-align: center;
+  border-radius: 10px;
+  border: none;
+  transition: all 0.618s;
+}
+.r #submit:hover {
+  background-color: rgb(101, 94, 252);
+  color: rgba(0, 0, 0, 0.618);
+}
+/* .r #getPassword {
+  width: 100px;
+  height: 20px;
+  color: white;
+  font-weight: 900;
+  background-color: rgba(0, 0, 0, 0.4);
+  line-height: 20px;
+  text-align: center;
+  border-radius: 10px;
+  border: none;
+  transition: all 0.618s;
+}
+.r #getPassword:hover {
+  background-color: rgba(251, 114, 153, 0.7);
+} */
+
+.r #goreg {
+  width: 100px;
+  height: 20px;
+  color: white;
+  font-weight: 900;
+  background-color: rgba(0, 0, 0, 0.4);
+  line-height: 20px;
+  text-align: center;
+  border-radius: 10px;
+  border: none;
+  transition: all 0.618s;
+}
+.r #goreg:hover {
+  background-color: rgba(251, 114, 153, 0.7);
+}
